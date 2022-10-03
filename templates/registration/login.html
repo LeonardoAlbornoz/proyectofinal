@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="header">
+
+    <section id="home-" class="tm-section" >
+        <br><br><br>  <br><br><br>
+        <form action="{% url 'login' %}" method="post" > {% csrf_token %}
+          <div class="form-group" style="width: 500px;margin: auto;">  
+          <br>
+          <div style="color:aliceblue">{{ form.username.label_tag }}</div>
+          <br>
+        <input type="username" style="color:aliceblue" autocapitalize="none" autocomplete="username" maxlength="150" class="form-control" placeholder="username" name="username" id="id_username" required/>
+        <br>
+        <div style="color:aliceblue">{{ form.password.label_tag }}</div>
+          <br>
+        <input type="password" style="color:aliceblue" class="form-control" placeholder="password" name="password" autocomplete="current-password" required id="id_password" />
+        <br>
+    <button class="btn btn-primary" style="margin-right: 150px;">Login</button><span><a style="color:blue" href="{% url 'password_reset' %}">Te olvidaste la contraseña?</a></span> 
+    <br>
+    <input type="hidden" name="next" value="{{ next }}" />
+    <br>
+    
+    </div>
+    </form>
+    <br>
+
+<div class="form-group" style="width: 500px;margin: auto;">
+  {% if form.errors %}
+  <p style="color: white;font-weight: bold;">Tu usuario y contraseña no se pudieron matchear, intenta nuevamente.</p>
+  
+  {% endif %}
+  <br><br>
+  {% if next %}
+  {% if user.is_authenticated %}
+  <p style="color: white;font-weight: bold;">No tenés permisos para acceder a esta página. Para proceder,
+  logueate con una cuenta que tenga accesos.</p>
+  {% else %}
+  <p style="color: white;font-weight: bold;">Por favor logueate para ver esta página.</p>
+  {% endif %}
+  {% endif %}
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<script>
+	document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+	</script>
+<header id="home" class="header">
+    <div class="overlay"></div>
+
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+        <div class="container">
+         
+                <div class="row">
+                    <div class="col-xl-6 tm-contact-col-l mb-4">
+                            <div class="form-group">
+                                <label type="text" name="name" class="infos container mb-4 mb-md-2">Leonardo Albornoz</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="8" style="background:transparent;border: 0px;resize: none;" name="message" class="infos container mb-4 mb-md-2" readonly>Estudiante de CoderHouse y Didactico, Empleado de TeleCentro, Jugador competitivo, Pianista, Programador</textarea>
+                            </div>
+
+                    </div>
+                    <div class="col-xl-6 tm-contact-col-r">
+                        <!-- Map -->
+                        <div class="mapouter mb-4">
+                            <div class="gmap_canvas">
+                                <iframe width="100%" height="520" id="gmap_canvas"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13140.454178991786!2d-58.5462005177538!3d-34.57599341969501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb77160243783%3A0x5e21a2d3c0a65957!2sSan%20Mart%C3%ADn%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sde!4v1662557897653!5m2!1ses-419!2sde"
+                                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                        </div>
+    
+                        <!-- Address -->
+                        <address class="subtitle font-weight-normal" style="color:gray;">
+                            Buenos Aires, Argentina<br>
+                            Partido de General San Martin
+                        </address>
+    
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="infos container mb-4 mb-md-2">
+        <div class="title">
+            <h6 class="subtitle font-weight-normal">Are locking for</h6>
+            <h5>Lorem inpsum</h5>
+            <p class="font-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="socials text-right">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <a class="d-block subtitle"><i class="ti-microphone pr-2"></i> (123) 456-7890</a>
+                    <a class="d-block subtitle"><i class="ti-email pr-2"></i> info@website.com</a>
+                </div>
+                <div class="col">
+                    <h6 class="subtitle font-weight-normal mb-2">Social Media</h6>
+                    <div class="social-links">
+                        <a href="https://fb.com" class="link pr-1"><i class="ti-facebook"></i></a>
+                        <a href="https://twitter.com" class="link pr-1"><i class="ti-twitter-alt"></i></a>
+                        <a href="https://google.com" class="link pr-1"><i class="ti-google"></i></a>
+                        <a href="https://pinterest.com" class="link pr-1"><i class="ti-pinterest-alt"></i></a>
+                        <a href="https://instagram.com" class="link pr-1"><i class="ti-instagram"></i></a>
+                        <a href="https://es.wikipedia.org/wiki/RSS" class="link pr-1"><i class="ti-rss"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

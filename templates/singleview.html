@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<script>
+	document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    
+	</script>
+<header id="home" class="header">
+
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+        <div class="container">
+            <div class="tm-main">
+                <!-- Contact section -->
+                {% for item in svobj %}
+        <div class="tm-section-wrap">
+            <div id="home" class="tm-section">
+                <div class="row">
+                    <div class="col-xl-6 tm-contact-col-l mb-4">
+                            <div class="form-group">
+                                <label type="text" name="name" class="infos container mb-4 mb-md-2">Subido por:  {{ item.autor }}</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="8" style="background:transparent;border: 0px;resize: none;" name="message" class="infos container mb-4 mb-md-2" readonly>{{ item.texto_largo }}</textarea>
+                            </div>
+
+                    </div>
+                    <div class="col-xl-6 tm-contact-col-r">
+                        <!-- Map -->
+                        <div class="mapouter mb-4">
+                            <div class="gmap_canvas">
+                                <img src="{{ item.imagen.url }} " alt="{{ item.titulo }}" style="width: 400px; height: 400px;">
+                            </div>
+
+                        </div>
+    
+                        <!-- Address -->
+                        <address class="subtitle font-weight-normal" style="color:white ;">
+                            {{ item.fecha }}
+                        </address>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- .tm-main -->  
+        </div>        
+    </div>
+</header>
+
+{% endblock %}

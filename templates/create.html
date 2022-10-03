@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<script>
+
+	document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+    document.querySelector("#navbarSupportedContent > ul > li:nth-child(2)").remove()
+	</script>
+<header id="home" class="header">
+    <div class="overlay"></div>
+
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+        <div class="container" style="color:aliceblue">
+            {% if mensaje %}
+            <div class="error_class" style="color:#9dffa5;font-weight:bold;margin-bottom: 564px;" >
+                {{mensaje}}
+                <a class="nav-link btn btn-primary" href="{% url 'login' %}">Login</a>
+            </div>
+            {% else %}
+                <!-- Contact section -->
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="error_class" style="color:crimson;font-weight:bold" >
+                    {% if errores %}
+                    {{errores}} 
+                    {% endif %}
+                    </div>
+                        {% for field in form %}
+                        {{ field.errors }}
+                        <div class="edit_class" >
+                            {{ field.errors }}
+                            <table><tr>
+                            <td style="display: inline-block; width: 200px;text-align: left;">{{ field.label_tag }}</td><td> {{ field }}</td>
+                            </table></tr>
+                            {% if field.help_text %}
+                            <p class="help" style="color:antiquewhite">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <button class="btn btn-primary">Crear</button> 
+                </form> 
+            {% endif %}
+        </div>        
+    </div>
+
+</header>
+
+{% endblock %}
